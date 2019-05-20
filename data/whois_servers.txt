@@ -1,3 +1,4 @@
 root whois.iana.org
 verisign whois.verisign-grs.com
 pir whois.pir.org
+nominet whois.nic.uk

@@ -1,3 +1,4 @@
 com verisign
 net verisign
 org pir
+uk nominet
