@@ -1,8 +1,8 @@
-com verisign
-net verisign
-org pir
-info afilias
-uk nominet
+com verisign icann
+net verisign icann
+org pir icann
+info afilias icann
+uk nominet nominet
 aarp dotaarp
 abarth afilias-srs
 abbott afilias-srs
