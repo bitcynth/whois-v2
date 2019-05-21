@@ -1,4 +1,10 @@
 com verisign
 net verisign
 org pir
+info afilias
 uk nominet
+aarp dotaarp
+abarth afilias-srs
+abbott afilias-srs
+abbvie afilias-srs
+abc dotabc
