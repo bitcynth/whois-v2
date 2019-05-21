@@ -16,9 +16,9 @@ def whois_raw(server, query, port=43):
     tmp = b''
     while True:
         tmp = s.recv(BUFFER_SIZE)
-        if tmp is b'':
-            break
         result += tmp.decode('utf-8')
+        if len(tmp) < BUFFER_SIZE:
+            break
     return result
 
 def query_via_root(query):
@@ -34,7 +34,6 @@ def query_via_list(query, qtype='domain'):
     res = 'error'
     if qtype == 'domain':
         server = config_data.get_server_for_domain(query)
-        print(server)
         res = whois_raw(server, query)
     return res
 
