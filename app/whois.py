@@ -17,7 +17,7 @@ def whois_raw(server, query, port=43):
     while True:
         tmp = s.recv(BUFFER_SIZE)
         result += tmp.decode('utf-8')
-        if len(tmp) < BUFFER_SIZE:
+        if len(tmp) == 0:
             break
     return result
 
