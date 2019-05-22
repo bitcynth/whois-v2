@@ -1,0 +1,155 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is the documentation for the WHOIS Cynthia.re V2 API. You can find the general documentation at [https://whois.cynthia.re/docs](https://whois.cynthia.re/docs).",
+    "version": "2.0.0",
+    "title": "WHOIS Cynthia.re API V2",
+    "termsOfService": "https://legal.cynthia.re/terms/",
+    "contact": {
+      "email": "me+api@cynthia.re"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "127.0.0.1:5000",
+  "basePath": "/api/v1/",
+  "tags": [
+    {
+      "name": "WHOIS",
+      "description": "Raw WHOIS",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://whois.cynthia.re/docs/raw"
+      }
+    },
+    {
+      "name": "Parse",
+      "description": "WHOIS Parsing",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://whois.cynthia.re/docs/parse"
+      }
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/whois/query/{query}": {
+      "get": {
+        "tags": [
+          "WHOIS"
+        ],
+        "summary": "Query for raw WHOIS text",
+        "description": "",
+        "operationId": "queryWhois",
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "query",
+            "description": "Pet object that needs to be added to the store",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "405": {
+            "description": "Invalid input"
+          },
+          "500": {
+            "description": "Unkown server error"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/parse/query/{query}": {
+      "get": {
+        "tags": [
+          "Parse"
+        ],
+        "summary": "Query and parse the WHOIS text",
+        "description": "",
+        "operationId": "parseQuery",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "query",
+            "description": "Pet object that needs to be added to the store",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ParsedQuery"
+            }
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "X-WHOIS-API-KEY",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "ParsedQuery": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string"
+        },
+        "raw": {
+          "type": "string"
+        },
+        "registrant": {
+          "type": "object",
+          "properties": {
+            "country": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "organization": {
+              "type": "string"
+            }
+          }
+        },
+        "query_date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "xml": {
+        "name": "ParsedQuery"
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about WHOIS Cynthia.re V2",
+    "url": "https://whois.cynthia.re"
+  }
+}
