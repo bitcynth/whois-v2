@@ -29,7 +29,20 @@ class ICANNParser(BaseParser):
             if len(match) > 0:
                 tmp_data[key] = match
         print(tmp_data)
-        #self.data['registrar'] = {
-        #    'iana_id': int(tmp_data['registrar_iana_id'])
-        #}
-        #self.data['registrant'] = {}
+        self.data['registrar'] = {}
+        self.data['registrant'] = {}
+        self.data['domain_data'] = {}
+        if 'registry_domain_id' in tmp_data:
+            self.data['domain_data']['domain_id'] = tmp_data['registry_domain_id'][0]
+        if 'registrar_iana_id' in tmp_data:
+            self.data['registrar']['iana_id'] = int(tmp_data['registrar_iana_id'][0])
+        if 'registrar_name' in tmp_data:
+            self.data['registrar']['name'] = tmp_data['registrar_name'][0]
+        if 'registrar_whois' in tmp_data:
+            self.data['registrar']['whois'] = tmp_data['registrar_whois'][0]
+        if 'registrar_url' in tmp_data:
+            self.data['registrar']['url'] = tmp_data['registrar_url'][0]
+        if 'updated_date' in tmp_data:
+            self.data['domain_data']['updated_date'] = tmp_data['updated_date'][0]
+        if 'creation_date' in tmp_data:
+            self.data['domain_data']['creation_date'] = tmp_data['creation_date'][0]
