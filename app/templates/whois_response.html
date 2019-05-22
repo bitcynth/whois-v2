@@ -1,10 +1,5 @@
-<!doctype html>
-<html>
-	<head>
-		<title>WHOIS</title>
-		<meta charset="utf-8">
-	</head>
-	<body>
-		<pre id="content">{{ data }}</pre>
-	</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<pre id="content">{{ data }}</pre>
+{% endblock %}
