@@ -3,8 +3,8 @@ net verisign icann
 org pir icann
 info afilias icann
 uk nominet nominet
-aarp dotaarp
-abarth afilias-srs
-abbott afilias-srs
-abbvie afilias-srs
-abc dotabc
+aarp dotaarp icann
+abarth afilias-srs icann
+abbott afilias-srs icann
+abbvie afilias-srs icann
+abc dotabc icann
