@@ -16,6 +16,14 @@ def whois(query):
     data = query_whois(query)
     return render_template('whois_response.html', data=data, title='WHOIS Result')
 
+@app.route('/whois', methods=['POST'])
+def whois_post():
+    if not 'query' in request.form:
+        return 'error'
+    query = request.form['query']
+    data = query_whois(query)
+    return render_template('whois_response.html', data=data, title='WHOIS Result')
+
 @app.route('/api/v1/whois/query/<query>', methods=['GET'])
 def api_v1_query_whois_get(query):
     res = query_whois(query)
