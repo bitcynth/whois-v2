@@ -1,5 +1,7 @@
 # Cynthia's WHOIS Client V2
 
+### Please note that this is heavy WIP, not production ready yet.
+
 TODO
 
 ## Development Setup
@@ -10,4 +12,4 @@ TODO
 - `flask run`
 
 ## License
-Copyright 2019 Cynthia Revstrom. All rights reserved.
+Copyright (C) 2019 Cynthia Maja Revstrom
