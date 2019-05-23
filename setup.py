@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='whois-v2',
-    version='0.0.1',
+    version='0.0.4',
     author='Cynthia Revstrom',
     author_email='me@cynthia.re',
     description='A web based WHOIS client and parser',
@@ -17,5 +17,9 @@ setuptools.setup(
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent'
-    ]
+    ],
+    install_requires=[
+        'Flask'
+    ],
+    include_package_data=True
 )
