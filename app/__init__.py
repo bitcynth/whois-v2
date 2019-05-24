@@ -6,4 +6,6 @@ config_data.load_data()
 app = Flask(__name__)
 
 from app import routes
-#from app.parsing import icann_parser
+
+def create_app():
+    return app

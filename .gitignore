@@ -1,4 +1,7 @@
 __pycache__/
+*.egg-info/
+/build/
+/dist/
 
 # Virtual Env
 /env/
