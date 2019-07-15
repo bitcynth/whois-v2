@@ -30,10 +30,13 @@ def query_via_root(query):
     whois_res = whois_raw(server, query)
     return whois_res
 
-def query_via_list(query, qtype='domain'):
+def query_via_list(query, qtype='other'):
     res = 'error'
     if qtype == 'domain':
         server = config_data.get_server_for_domain(query)
+        res = whois_raw(server, query)
+    elif qtype == 'other':
+        server = config_data.get_server_for_other(query)
         res = whois_raw(server, query)
     return res
 

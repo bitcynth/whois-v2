@@ -1,0 +1,8 @@
+# Handles
+.+-arin arin
+.+-ripe ripe
+.+-ap apnic
+.+-afrinic afrinic
+poem-.+ ripe
+as-.+ radb
+rs-.+ radb

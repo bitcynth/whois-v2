@@ -1,6 +1,24 @@
 # Root WHOIS Server
 root whois.iana.org
 
+# RIPE NCC
+ripe whois.ripe.net
+
+# ARIN
+arin whois.arin.net
+
+# APNIC
+apnic whois.apnic.net
+
+# AfriNIC
+afrinic whois.afrinic.net
+
+# LACNIC
+lacnic whois.lacnic.net
+
+# RADb
+radb whois.radb.net
+
 # VeriSign GRS WHOIS for .com, .net, etc
 verisign whois.verisign-grs.com
 
