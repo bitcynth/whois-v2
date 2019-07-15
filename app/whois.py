@@ -1,7 +1,7 @@
 import socket
 import re
 
-from app import config_data
+from app import config_data, utils
 
 BUFFER_SIZE = 4096
 
@@ -33,7 +33,7 @@ def query_via_root(query):
 def query_via_list(query, qtype=None):
     res = 'error'
     if qtype == None:
-        qtype = 'other'
+        qtype = utils.get_resource_type(query)
     if qtype == 'domain':
         server = config_data.get_server_for_domain(query)
         res = whois_raw(server, query)
