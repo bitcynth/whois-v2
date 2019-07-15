@@ -1,8 +1,15 @@
+# Root WHOIS Server
 root whois.iana.org
+
+# VeriSign GRS WHOIS for .com, .net, etc
 verisign whois.verisign-grs.com
+
+# PIR for .org mainly
 pir whois.pir.org
+
+# Nominet mainly .uk
 nominet whois.nic.uk
-dotaarp whois.nic.aarp
+
+# Afilias .info and some others
 afilias-srs whois.afilias-srs.net
 afilias whois.afilias.net
-dotabc whois.nic.abc

@@ -1,10 +1,27 @@
+# Main gTLDs
 com verisign icann
 net verisign icann
 org pir icann
 info afilias icann
+
+# AFNIC TLDs
+re whois.nic.re afnic
+
+# UK - United Kingdom
 uk nominet nominet
-aarp dotaarp icann
+
+# AX - Åland Islands
+ax whois.ax whoisax
+
+# .aarp AARP
+aarp whois.nic.aarp icann
+
+# .abarth Fiat Chrysler Automobiles N.V.
 abarth afilias-srs icann
+
+# .abc 
+abc whois.nic.abc icann
+
+# Un-categorized
 abbott afilias-srs icann
 abbvie afilias-srs icann
-abc dotabc icann
