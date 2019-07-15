@@ -12,9 +12,11 @@ def swagger():
 
 @app.route('/whois/<path:query>')
 def whois(query):
-    print(request.headers['Accept'])
+    accept = request.headers['Accept'].split(',')
     data = query_whois(query)
-    return render_template('whois_response.html', data=data, title='WHOIS Result')
+    if 'text/html' in accept:
+        return render_template('whois_response.html', data=data, title='WHOIS Result')
+    return Response(data, mimetype='text/plain')
 
 @app.route('/whois', methods=['POST'])
 def whois_post():
