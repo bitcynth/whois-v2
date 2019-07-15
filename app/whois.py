@@ -37,5 +37,7 @@ def query_via_list(query, qtype='domain'):
         res = whois_raw(server, query)
     return res
 
-def query_whois(query):
-    return query_via_root(query)
+def query_whois(query, flags=[]):
+    if 'no_list' in flags:
+        return query_via_root(query)
+    return query_via_list(query)
