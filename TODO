@@ -1,9 +1,1 @@
-Proper UI
-IPv6 rate limit evasion
-proper API
-WHOIS Aggregation server
-less IANA queries
-historical comparison
-alerts on changes?
-query will return based on accept header
-Parsing
+Moved to https://github.com/bitcynth/whois-v2/issues
