@@ -1,4 +1,17 @@
+# Reserved ASN http://www.iana.org/go/rfc7607
 0 root
+65535 root
+
+# AS_TRANS
+23456 root
+
+# Documentation and sample
+64496-64511 root
+
+# Reserved for private use
+64512-65534 root
+
+# Based on http://www.iana.org/assignments/as-numbers/as-numbers.xhtml
 1-1876 arin
 1877-1901 ripe
 1902-2042 arin
@@ -6,3 +19,65 @@
 2044-2046 arin
 2047 ripe
 2048-2106 arin
+2107-2136 ripe
+2137-2584 arin
+2585-2614 ripe
+2615-2772 arin
+2773-2822 ripe
+2823-2829 arin
+2830-2879 ripe
+2880-3153 arin
+3154-3353 ripe
+3354-4607 arin
+4608-4865 apnic
+4866-5376 arin
+5377-5631 ripe
+5632-6655 arin
+6656-6911 ripe
+6912-7466 arin
+7467-7722 apnic
+7723-8191 arin
+8192-9215 ripe
+9216-10239 apnic
+10240-12287 arin
+12288-13311 ripe
+13312-15359 arin
+15360-16383 ripe
+16384-17407 arin
+17408-18431 apnic
+18432-20479 arin
+20480-21503 ripe
+21504-23455 arin
+23457-23551 arin
+23552-24575 apnic
+24576-25599 ripe
+25600-27647 arin
+27648-28671 lacnic
+28672-29695 ripe
+29696-30719 arin
+30720-31743 ripe
+31744-33791 arin
+33792-35839 ripe
+35840-36863 arin
+36864-37887 afrinic
+37888-38911 apnic
+38912-39935 ripe
+39936-40959 arin
+40960-45055 ripe
+45056-46079 apnic
+46080-47103 arin
+47104-52223 ripe
+52224-53247 lacnic
+53248-55295 arin
+55296-56319 apnic
+56320-58367 ripe
+58368-59391 apnic
+59392-61439 ripe
+61440-61951 lacnic
+61952-62463 ripe
+62464-63487 arin
+63488-64098 apnic
+64099-64197 lacnic
+64198-64296 arin
+64297-64395 apnic
+64396-64495 ripe
