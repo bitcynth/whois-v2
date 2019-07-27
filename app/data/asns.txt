@@ -1,0 +1,8 @@
+0 root
+1-1876 arin
+1877-1901 ripe
+1902-2042 arin
+2043 ripe
+2044-2046 arin
+2047 ripe
+2048-2106 arin
