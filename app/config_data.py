@@ -69,7 +69,6 @@ def get_server_for_domain(domain):
     for i, d in enumerate(parts):
         dom = '.'.join(parts[i:])
         if dom in domains:
-            print(domain)
             if domains[d].server in whois_servers:
                 return whois_servers[domains[d].server]
             return domains[d].server

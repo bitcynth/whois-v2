@@ -39,7 +39,6 @@ def query_via_list(query, qtype=None):
         res = whois_raw(server, query)
     elif qtype == 'asn':
         server = config_data.get_server_for_asn(query)
-        print(server)
         res = whois_raw(server, query)
     elif qtype == 'other':
         server = config_data.get_server_for_other(query)
