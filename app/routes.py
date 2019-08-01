@@ -1,10 +1,10 @@
-from app import app
+from app import app, app_version
 from app.whois import query_whois
 from flask import render_template, jsonify, request, Response
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', version=app_version)
 
 @app.route('/data/swagger.json')
 def swagger():
