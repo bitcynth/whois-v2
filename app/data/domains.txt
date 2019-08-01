@@ -13,6 +13,9 @@ uk nominet nominet
 # AX - Åland Islands
 ax whois.ax whoisax
 
+# TW - Taiwan
+tw whois.twnic.net.tw twnic
+
 # .aarp AARP
 aarp whois.nic.aarp icann
 
