@@ -6,15 +6,50 @@ info afilias icann
 
 # AFNIC TLDs
 re whois.nic.re afnic
+pm whois.nic.pm afnic
+wf whois.nic.wf afnic
 
 # UK - United Kingdom
 uk nominet nominet
+
+# AC - Acension Island
+ac whois.nic.ac icann
+
+# AD - Andorra
+# No WHOIS
+
+# AE - United Arab Emirates
+ae whois.aeda.net.ae aeda
+
+# AF - Afganistan
+af whois.nic.af icann
+
+# AG - Antigua And Barbuda
+ag whois.nic.ag icann
+
+# AI - Anguilla
+ai whois.nic.ai icann
+
+# AL - Albania
+# No WHOIS
+
+# AM - Armenia
+am whois.amnic.net amnic
 
 # AX - Åland Islands
 ax whois.ax whoisax
 
 # TW - Taiwan
 tw whois.twnic.net.tw twnic
+
+# SE - Sweden
+se whois.iis.se iis
+
+# NU - Niue
+nu whois.iis.nu iis
+
+# KN - Saint Kitts and Nevis
+kn whois.nic.kn icann
 
 # .aarp AARP
 aarp whois.nic.aarp icann
