@@ -49,6 +49,8 @@ def query_via_list(query, qtype=None):
         if server is None:
             return query_via_root(query)
         res = whois_raw(server, query)
+    else:
+        return query_via_root(query)
     return res
 
 def query_whois(query, flags=[]):
