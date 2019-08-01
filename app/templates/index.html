@@ -21,4 +21,11 @@ Test query: <a href="/whois/cynthia.re">cynthia.re</a><br>
 
 <b>whois.cynthia.re version:</b> {{ version }}
 
+<h3>Supporters</h3>
+<ul>
+    {% for s in supporters %}
+    <li>{{ s }}</li>
+    {% endfor %}
+</ul>
+
 {% endblock %}

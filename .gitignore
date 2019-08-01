@@ -5,3 +5,6 @@ __pycache__/
 
 # Virtual Env
 /env/
+
+# Supporters
+/app/data/supporters.txt
