@@ -36,12 +36,18 @@ def query_via_list(query, qtype=None):
         qtype = utils.get_resource_type(query)
     if qtype == 'domain':
         server = config_data.get_server_for_domain(query)
+        if server is None:
+            return query_via_root(query)
         res = whois_raw(server, query)
     elif qtype == 'asn':
         server = config_data.get_server_for_asn(query)
+        if server is None:
+            return query_via_root(query)
         res = whois_raw(server, query)
     elif qtype == 'other':
         server = config_data.get_server_for_other(query)
+        if server is None:
+            return query_via_root(query)
         res = whois_raw(server, query)
     return res
 
