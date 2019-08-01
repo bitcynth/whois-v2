@@ -24,7 +24,7 @@ def whois_raw(server, query, port=43):
 def query_via_root(query):
     root_res = whois_raw('whois.iana.org', query)
     m = IANA_WHOIS_REFER_REGEX.findall(root_res)
-    if m == 0:
+    if len(m) == 0:
         return root_res
     server = m[0]
     whois_res = whois_raw(server, query)
