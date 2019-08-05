@@ -1,0 +1,26 @@
+* { box-sizing: border-box; word-break: break-all; word-break: break-word; overflow-wrap: break-word; }
+body { padding: 32px 16px; color: #999; font-weight: 300; text-align: center; font-family: Helvetica, sans-serif; max-width: 800px; margin: 0 auto; }
+main { margin-bottom: 64px; }
+header { margin-bottom: 16px; }
+h1 { margin: 0 8px 0 0; display: inline-block; color: #666; font-weight: 400; }
+form { margin-bottom: 8px; }
+input { border: 1px solid #ccc; border-radius: 100px; font-size: 16px; outline: 0; padding: 8px 16px; transition: all 0.2s; height: 36px; }
+.inp { padding-right: 108px; color: #999; max-width: 480px; width: 90%; }
+.btn { background-color: #bbb; color: #fff; margin-left: -96px; width: 96px; cursor: pointer; }
+.inp:focus { border-color: #03a9f4; }
+.inp:focus + .btn { background-color: #999; border-color: #03a9f4; }
+.inp + .btn:hover, .inp + .btn:focus { background-color: #03a9f4; border-color: #03a9f4; }
+section { margin: 48px 0; }
+.instructions { font-size: 0.9em; }
+pre { font-size: 1.3em; margin: 8px 0 0; color: #666; white-space: pre-wrap; }
+a { color: #03a9f4; text-decoration: none; transition: all 0.2s; }
+a:hover, a:focus { color: #e84ed3; outline: 0; }
+.supporters { background-color: #eee; text-align: left; padding: 24px 32px; border-radius: 8px; }
+h3 { margin: 0 0 12px; font-weight: 400; color: #666; }
+ul { padding-left: 32px; font-size: 0.9em; }
+li { font-size: 0.9em; margin-bottom: 4px; }
+p { margin: 0; color: #666; }
+footer { color: #aaa; font-size: 0.8em; }
+@media screen and (min-width: 480px) {
+  body { padding: 64px 24px; }
+}

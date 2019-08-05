@@ -1,33 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>WHOIS Cynthia.re</h1>
+<main>
+    <header><h1>whois</h1><span>by cynthia.re</span></header>
+    <form action="/whois" method="post">
+        <input class="inp" type="text" name="query" id="query">
+        <input class="btn" type="submit" value="Submit">
+    </form>
+    <div>Test query: <a href="/whois/cynthia.re">cynthia.re</a></div>
+</main>
 
-You can submit a query by either using the form below or going to a url in the format of https://whois.cynthia.re/whois/<b>&lt;query&gt;</b><br>
+<section class="instructions">
+    You can submit a query by either using the form above or going to a url in the format of <pre>https://whois.cynthia.re/whois/<b>&lt;query&gt;</b></pre>
+</section>
 
-<br>
+<section class="supporters">
+    <h3>Supporters</h3>
+    <ul>
+        {% for s in supporters %}
+        <li>{{ s }}</li>
+        {% endfor %}
+    </ul>
+    <p>If you want you can support me on <a href="https://www.patreon.com/cynthiare">https://www.patreon.com/cynthiare</a>.</p>
+</section>
 
-Test query: <a href="/whois/cynthia.re">cynthia.re</a><br>
-
-<br>
-
-<form action="/whois" method="post">
-    <input type="text" name="query" id="query">
-    <input type="submit" value="Submit">
-</form>
-
-<br>
-<br>
-
-<b>whois.cynthia.re version:</b> {{ version }}
-
-<h3>Supporters</h3>
-If you want you can support me on <a href="https://www.patreon.com/cynthiare">https://www.patreon.com/cynthiare</a>.
-<br>
-<ul>
-    {% for s in supporters %}
-    <li>{{ s }}</li>
-    {% endfor %}
-</ul>
+<footer>whois.cynthia.re version: {{ version }}</footer>
 
 {% endblock %}
