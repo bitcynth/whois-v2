@@ -14,7 +14,12 @@ with open(os.path.join(app.root_path, 'version.txt')) as version_file:
 
 if os.path.exists(os.path.join(app.root_path, 'data/supporters.txt')):
     with open(os.path.join(app.root_path, 'data/supporters.txt')) as supporters_file:
-        app_supporters = supporters_file.readlines()
+        lines = supporters_file.readlines()
+        for line in lines:
+            line = config_data.COMMENTS_REGEX.sub('', line)
+            if line == '':
+                continue
+            app_supporters.append(line)
 
 from app import routes, compat_routes
 
