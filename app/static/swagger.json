@@ -53,7 +53,7 @@
           {
             "in": "path",
             "name": "query",
-            "description": "Pet object that needs to be added to the store",
+            "description": "The query such as 'AS57782' or 'cynthia.re'",
             "required": true,
             "type": "string"
           }
