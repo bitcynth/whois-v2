@@ -1,19 +1,19 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "This is the documentation for the WHOIS Cynthia.re V2 API. You can find the general documentation at [https://whois.cynthia.re/docs](https://whois.cynthia.re/docs).",
+    "description": "This is the documentation for the WHOIS Cynthia.re V2 API.",
     "version": "2.0.0",
     "title": "WHOIS Cynthia.re API V2",
-    "termsOfService": "https://legal.cynthia.re/terms/",
+    "termsOfService": "https://whois.cynthia.re/terms/",
     "contact": {
       "email": "me+api@cynthia.re"
     },
     "license": {
-      "name": "Apache 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      "name": "MIT License",
+      "url": "https://raw.githubusercontent.com/bitcynth/whois-v2/master/LICENSE.md"
     }
   },
-  "host": "127.0.0.1:5000",
+  "host": "whois.cynthia.re",
   "basePath": "/api/v1/",
   "tags": [
     {
