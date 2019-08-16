@@ -9,6 +9,9 @@ re whois.nic.re afnic
 pm whois.nic.pm afnic
 wf whois.nic.wf afnic
 
+# .ntt - Not in IANA whois
+ntt whois.nic.ntt icann
+
 # UK - United Kingdom
 uk nominet nominet
 
