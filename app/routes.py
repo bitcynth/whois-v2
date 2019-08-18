@@ -1,14 +1,14 @@
 from app import app, app_version, app_supporters
 from app.whois import query_whois
-from flask import render_template, jsonify, request, Response
+from flask import render_template, jsonify, request, Response, send_from_directory
 
 @app.route('/')
 def index():
     return render_template('index.html', version=app_version, supporters=app_supporters)
 
-@app.route('/data/swagger.json')
-def swagger():
-    return app.send_static_file('swagger.json')
+@app.route('/data/<path:path>', methods=['GET'])
+def serve_static(path):
+    return send_from_directory('static', path)
 
 @app.route('/whois/<path:query>')
 def whois(query):
