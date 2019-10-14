@@ -1,5 +1,7 @@
 # Cynthia's WHOIS Client V2
 
+[![Build Status](https://ci.qs.nu/buildStatus/icon?job=whois-v2)](https://ci.qs.nu/job/whois-v2/)
+
 ### Please note that this is heavy WIP, not production ready yet.
 
 TODO
