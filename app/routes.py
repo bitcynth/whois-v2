@@ -9,7 +9,7 @@ def index():
 
 @app.route('/debuginfo')
 def debug_info():
-    return render_template('debug_info.html', version=app_version, hostname=socket.gethostbyname())
+    return render_template('debug_info.html', version=app_version, hostname=socket.gethostname())
 
 @app.route('/data/swagger.json')
 def swagger():
