@@ -12,4 +12,4 @@ docker tag bitcynth/whois-v2:$tag bitcynth/whois-v2:latest
 docker push bitcynth/whois-v2:$tag
 docker push bitcynth/whois-v2:latest
 
-kubectl set image deployment whois-v2 whois-v2=bitcynth/whois-v2:$tag
+kubectl set image deployment whois whois=bitcynth/whois-v2:$tag
