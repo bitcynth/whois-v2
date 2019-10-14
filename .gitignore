@@ -9,8 +9,5 @@ __pycache__/
 # Virtual Env
 /env/
 
-# Supporters
-/app/data/supporters.txt
-
 # Version
 /app/version.txt
