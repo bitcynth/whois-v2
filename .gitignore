@@ -3,8 +3,14 @@ __pycache__/
 /build/
 /dist/
 
+# Temporary
+/random/
+
 # Virtual Env
 /env/
 
 # Supporters
 /app/data/supporters.txt
+
+# Version
+/app/version.txt

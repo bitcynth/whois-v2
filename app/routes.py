@@ -1,10 +1,15 @@
 from app import app, app_version, app_supporters
 from app.whois import query_whois
 from flask import render_template, jsonify, request, Response
+import socket
 
 @app.route('/')
 def index():
     return render_template('index.html', version=app_version, supporters=app_supporters)
+
+@app.route('/debuginfo')
+def debug_info():
+    return render_template('debug_info.html', version=app_version, hostname=socket.gethostbyname())
 
 @app.route('/data/swagger.json')
 def swagger():

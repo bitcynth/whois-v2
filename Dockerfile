@@ -1,22 +1,14 @@
 FROM python:3.7-alpine
 
-RUN adduser -D whois
-
-WORKDIR /home/whois
+COPY app /app
+WORKDIR /app
 
 COPY requirements.txt requirements.txt
-RUN python -m venv env
-RUN env/bin/pip install -r requirements.txt
-RUN env/bin/pip install gunicorn
+RUN pip install -r requirements.txt
+RUN pip install gunicorn
 
 COPY app app
-COPY whoisclient.py boot.sh ./
-RUN chmod +x boot.sh
-
-ENV FLASK_APP whoisclient.py
-
-RUN chown -R whois:whois ./
-USER whois
+COPY whoisclient.py ./
 
 EXPOSE 5000
-ENTRYPOINT ["./boot.sh"]
+ENTRYPOINT ["gunicorn", "-b", ":5000", "--access-logfile", "-", "--error-logfile", "-", "whoisclient:app"]
