@@ -1,0 +1,3 @@
+DEFAULT utf-8
+
+ripe iso-8859-1

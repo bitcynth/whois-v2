@@ -6,12 +6,15 @@ ASNS_REGEX = re.compile('^([0-9]+)\-([0-9]+)\s+([a-zA-Z0-9_\-\.]+)')
 INDIVIDUAL_ASN_REGEX = re.compile('^([0-9]+)\s+([a-zA-Z0-9_\-\.]+)')
 DOMAINS_REGEX = re.compile('^([a-zA-Z0-9\.\-]+)\s+([a-zA-Z0-9_\-\.]+)\s+([a-zA-Z0-9_\-]+)')
 OTHERS_REGEX = re.compile('^(.*)\s+([a-zA-Z0-9_\-\.]+)')
+ENCODING_REGEX = re.compile('^([a-zA-Z0-9_\-]+)\s+([a-zA-Z0-9_\-\.]+)')
 COMMENTS_REGEX = re.compile('#.*')
 
 whois_servers = {}
+whois_server_labels = {}
 domains = {}
 asns = {}
 others = []
+server_encodings = {}
 
 class DomainEntry(object):
     def __init__(self, server, format):
@@ -23,7 +26,7 @@ class OtherEntry(object):
         self.server = server
         self.regex = re.compile(regex)
 
-def load_data(asns_file='data/asns.txt', domains_file='data/domains.txt', whois_servers_file='data/whois_servers.txt', others_file='data/other.txt'):
+def load_data(asns_file='data/asns.txt', domains_file='data/domains.txt', whois_servers_file='data/whois_servers.txt', others_file='data/other.txt', encodings_file='data/encodings.txt'):
     this_dir, this_filename = os.path.split(__file__)
 
     with open(os.path.join(this_dir, whois_servers_file)) as f:
@@ -33,7 +36,10 @@ def load_data(asns_file='data/asns.txt', domains_file='data/domains.txt', whois_
                 continue
             match = WHOIS_SERVER_REGEX.findall(line)
             if len(match) > 0 and len(match[0]) > 1:
-                whois_servers[match[0][0]] = match[0][1]
+                server_label = match[0][0]
+                server_addr = match[0][1]
+                whois_servers[server_label] = server_addr
+                whois_server_labels[server_addr] = server_label
     with open(os.path.join(this_dir, asns_file)) as f:
         for line in f.readlines():
             line = COMMENTS_REGEX.sub('', line)
@@ -63,6 +69,14 @@ def load_data(asns_file='data/asns.txt', domains_file='data/domains.txt', whois_
             if len(match) > 0 and len(match[0]) > 1:
                 o = OtherEntry(match[0][0], match[0][1])
                 others.append(o)
+    with open(os.path.join(this_dir, encodings_file)) as f:
+        for line in f.readlines():
+            line = COMMENTS_REGEX.sub('', line)
+            if line == '':
+                continue
+            match = ENCODING_REGEX.findall(line)
+            if len(match) > 0 and len(match[0]) > 1:
+                server_encodings[match[0][0]] = match[0][1]
 
 def get_server_for_domain(domain):
     parts = domain.split('.')
@@ -106,3 +120,11 @@ def get_format_for_domain(domain):
         dom = '.'.join(parts[i:])
         if dom in domains:
             return domains[d].format
+
+def get_encoding_for_server(server_address):
+    if not server_address in whois_server_labels:
+        return server_encodings['DEFAULT']
+    server_label = whois_server_labels[server_address]
+    if not server_label in server_encodings:
+        return server_encodings['DEFAULT']
+    return server_encodings[server_label]
