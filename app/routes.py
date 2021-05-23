@@ -14,6 +14,7 @@ def swagger():
 def whois(query):
     accept = request.headers['Accept'].split(',')
     data = query_whois(query)
+    data = data.replace('\uFFFD', '?') # replace UTF-8's 'REPLACEMENT CHARCTER' with '?'
     if 'text/html' in accept:
         return render_template('whois_response.html', data=data, title='WHOIS Result')
     return Response(data, mimetype='text/plain')

@@ -7,16 +7,19 @@ BUFFER_SIZE = 4096
 
 IANA_WHOIS_REFER_REGEX = re.compile('whois:[\s]+([\.a-z0-9\-]+)')
 
-def whois_raw(server, query, port=43):
+def whois_raw(server, query, port=43, encoding=None):
+    if encoding is None:
+        # try to find the correct encoding if not provided
+        encoding = config_data.get_encoding_for_server(server)
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.settimeout(2)
     s.connect((server, port))
-    s.send('{}\r\n'.format(query).encode('utf-8'))
+    s.send('{}\r\n'.format(query).encode(encoding))
     result = ''
     tmp = b''
     while True:
         tmp = s.recv(BUFFER_SIZE)
-        result += tmp.decode('utf-8')
+        result += tmp.decode(encoding, errors='replace')
         if len(tmp) == 0:
             break
     return result
